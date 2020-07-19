@@ -1,4 +1,4 @@
-import { parse } from "https://deno.land/std@v0.38.0/flags/mod.ts";
+import { parse } from "https://deno.land/std/flags/mod.ts";
 import { CoinData, Flag } from "./types.d.ts";
 
 const { args } = Deno;
@@ -30,7 +30,7 @@ async function getCoin(flag: Flag): Promise<CoinData> {
 
 function formatData(raw: CoinData[] | CoinData): string {
    let formattedData: string = ``;
-   
+
    if(Array.isArray(raw)) {
       formattedData = `${raw[0].name}[${raw[0].symbol}] - USD${raw[0].price_usd}`
       return formattedData;
